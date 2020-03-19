@@ -44,3 +44,13 @@ class Invoice:
                 continue
             else:
                 return userInput
+
+    def totalIncreasePercentage(self, percent):
+        total_increase_percentage = 0
+        total_increase_percentage += 1 + percent / 100
+        return total_increase_percentage
+
+    def increasedImpurePrice(self, products, percent):
+        total_increased_price = 0
+        total_increased_price += self.totalImpurePrice(products) * self.totalIncreasePercentage(percent)
+        return total_increased_price

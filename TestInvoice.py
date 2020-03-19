@@ -9,6 +9,11 @@ def products():
     return products
 
 @pytest.fixture()
+def percent():
+    percent = 10
+    return percent
+
+@pytest.fixture()
 def invoice():
     invoice = Invoice()
     return invoice
@@ -24,4 +29,8 @@ def test_CanCalculateTotalDiscount(invoice, products):
 def test_CanCalculateTotalPurePrice(invoice, products):
     invoice.totalPurePrice(products)
     assert invoice.totalPurePrice(products) == 69.38
+
+def test_CanCalculateIncreasedImpurePrice(invoice, products, percent):
+    invoice.increasedImpurePrice(products, percent)
+    assert invoice.increasedImpurePrice(products, percent) == 82.5
 
