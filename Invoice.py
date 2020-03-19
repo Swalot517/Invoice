@@ -54,3 +54,9 @@ class Invoice:
         total_increased_price = 0
         total_increased_price += self.totalImpurePrice(products) * self.totalIncreasePercentage(percent)
         return total_increased_price
+
+    def totalProducts(self, products):
+        total_products = 0
+        for k, v in products.items():
+            total_products += int(v['qnt'])
+        return total_products

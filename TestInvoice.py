@@ -26,6 +26,10 @@ def test_CanCalculateTotalDiscount(invoice, products):
     invoice.totalDiscount(products)
     assert invoice.totalDiscount(products) == 5.62
 
+def test_CanCalculateTotalProducts(invoice, products):
+    invoice.totalProducts(products)
+    assert invoice.totalProducts(products) == 15
+
 def test_CanCalculateTotalPurePrice(invoice, products):
     invoice.totalPurePrice(products)
     assert invoice.totalPurePrice(products) == 69.38
@@ -33,4 +37,6 @@ def test_CanCalculateTotalPurePrice(invoice, products):
 def test_CanCalculateIncreasedImpurePrice(invoice, products, percent):
     invoice.increasedImpurePrice(products, percent)
     assert invoice.increasedImpurePrice(products, percent) == 82.5
+
+
 
